@@ -1,14 +1,38 @@
 
-// Favorite activities array
 const activities = [
-    "💻 Learning Web Development",
-    "🎮 Playing Games",
-    "🎵 Listening to Music",
-    "📚 Reading and Learning",
-    "🌍 Exploring New Technologies"
+    {
+        number: "01",
+        name: "Web Development",
+        description: "Creating modern websites and learning new coding techniques."
+    },
+    {
+        number: "02",
+        name: "Technology",
+        description: "Exploring new technologies and discovering digital innovations."
+    },
+    {
+        number: "03",
+        name: "Music",
+        description: "Enjoying music and discovering new sounds."
+    },
+    {
+        number: "04",
+        name: "Programming",
+        description: "Solving coding challenges and building creative projects."
+    },
+    {
+        number: "05",
+        name: "Learning",
+        description: "Developing new skills and expanding my knowledge."
+    },
+    {
+        number: "06",
+        name: "Creativity",
+        description: "Turning imaginative ideas into practical digital experiences."
+    }
 ];
 
-// Select HTML elements
+// HTML elements
 const moreBtn = document.getElementById("moreBtn");
 const backgroundBtn = document.getElementById("backgroundBtn");
 const greetBtn = document.getElementById("greetBtn");
@@ -17,43 +41,53 @@ const textColorBtn = document.getElementById("textColorBtn");
 const moreInfo = document.getElementById("moreInfo");
 const greeting = document.getElementById("greeting");
 const activityList = document.getElementById("activityList");
-const heading = document.getElementById("profile-name");
+const heading = document.querySelector(".hero h1 span");
 
-// Display favorite activities
+// FEATURE 1: Display favorite activities
 function displayActivities() {
-    activities.forEach(function(activity) {
-        const li = document.createElement("li");
-        li.textContent = activity;
-        activityList.appendChild(li);
+    activityList.innerHTML = "";
+
+    activities.forEach((activity) => {
+        const card = document.createElement("article");
+
+        card.className = "activity-card";
+
+        card.innerHTML = `
+            <div class="activity-number">${activity.number} / 06</div>
+            <h3>${activity.name}</h3>
+            <p>${activity.description}</p>
+        `;
+
+        activityList.appendChild(card);
     });
 }
 
 displayActivities();
 
-// Feature 1: Show More About Me
+// FEATURE 2: Show more about me
 let informationVisible = false;
 
-function showMore() {
+function toggleInformation() {
     if (informationVisible === false) {
         moreInfo.style.display = "block";
-        moreBtn.textContent = "Show Less About Me";
+        moreBtn.textContent = "Show Less About Me ↑";
         informationVisible = true;
     } else {
         moreInfo.style.display = "none";
-        moreBtn.textContent = "Show More About Me";
+        moreBtn.textContent = "Show More About Me ↗";
         informationVisible = false;
     }
 }
 
-moreBtn.addEventListener("click", showMore);
+moreBtn.addEventListener("click", toggleInformation);
 
-// Feature 2: Change Background
+// FEATURE 3: Change background
 const backgrounds = [
-    "#eef4ff",
-    "#dcfce7",
-    "#fce7f3",
-    "#fef3c7",
-    "#ede9fe"
+    "#080d19",
+    "#101827",
+    "#11152a",
+    "#10201f",
+    "#20162b"
 ];
 
 let backgroundIndex = 0;
@@ -71,42 +105,44 @@ function changeBackground() {
 
 backgroundBtn.addEventListener("click", changeBackground);
 
-// Feature 3: Favorite Activities
-// Already displayed using the activities array above.
-
-// Feature 4: Greet Me!
+// FEATURE 4: Greet visitor
 function greetVisitor() {
-    let visitorName = prompt("Hello! What is your name?");
+    const visitorName = prompt("Welcome! What is your name?");
 
     if (visitorName && visitorName.trim() !== "") {
         greeting.textContent =
-            "Welcome to my profile, " + visitorName.trim() + "! 👋";
+            `Welcome to my profile, ${visitorName.trim()}! 👋`;
+
     } else {
-        greeting.textContent = "You didn't enter a name. Try again!";
+        greeting.textContent =
+            "Please enter your name to receive a greeting.";
     }
 }
 
 greetBtn.addEventListener("click", greetVisitor);
 
-// Bonus: Change Text Colour
+// FEATURE 5: Change heading text colour
 const textColors = [
-    "#1e3a8a",
-    "#dc2626",
-    "#059669",
-    "#9333ea",
-    "#ea580c"
+    "#00d4ff",
+    "#facc15",
+    "#f472b6",
+    "#4ade80",
+    "#c084fc"
 ];
 
 let colorIndex = 0;
 
 function changeTextColor() {
+    heading.style.color = textColors[colorIndex];
+
+    heading.style.background = "none";
+    heading.style.webkitTextFillColor = textColors[colorIndex];
+
     colorIndex++;
 
     if (colorIndex >= textColors.length) {
         colorIndex = 0;
     }
-
-    heading.style.color = textColors[colorIndex];
 }
 
 textColorBtn.addEventListener("click", changeTextColor);
