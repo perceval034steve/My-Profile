@@ -4,82 +4,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
+
+    <meta name="description" content="Steve Perceval's personal developer profile and portfolio.">
+
+    <title>Steve Perceval | Developer Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <header class="hero">
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+        <a href="#" class="logo">
+            SP<span>.</span>
+        </a>
+
         <nav>
-            <h2 class="logo">My<span>Profile.</span></h2>
-            <p>Welcome to my personal space</p>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#activities">Interests</a>
         </nav>
 
-        <main class="profile-container">
-
-            <div class="profile-image">
-                <img src="https://lh3.googleusercontent.com/a/ACg8ocIFtXHD3aj_LC3PuSBCxgFTTTj8DMQA1scv6yWd8Gygx_-oYBY=s83-c-mo"
-                     alt="Profile portrait">
-            </div>
-
-            <h1 id="profile-name">Hello, I`m Steve Perceval</h1>
-
-            <p class="intro">
-                I am a passionate student, creative thinker and aspiring
-                web developer who enjoys learning new technologies.
-            </p>
-
-            <div class="details">
-                <div class="detail-box">
-                    <span>🎂</span>
-                    <h3>Age</h3>
-                    <p>15 years</p>
-                </div>
-
-                <div class="detail-box">
-                    <span>🎮</span>
-                    <h3>Hobby</h3>
-                    <p>Coding</p>
-                </div>
-
-                <div class="detail-box">
-                    <span>💻</span>
-                    <h3>Favorite Language</h3>
-                    <p>JavaScript</p>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button id="moreBtn">Show More About Me</button>
-                <button id="backgroundBtn">Change Background</button>
-                <button id="greetBtn">Greet Me!</button>
-                <button id="textColorBtn">Change Text Colour</button>
-            </div>
-
-            <div id="moreInfo" class="more-info">
-                <h3>More About Me</h3>
-                <p>
-                    I enjoy building websites, solving programming challenges,
-                    discovering new ideas and improving my technical skills.
-                    My dream is to become a professional software developer.
-                </p>
-            </div>
-
-            <div id="greeting" class="greeting"></div>
-
-            <section class="activities">
-                <h2>My Favorite Activities</h2>
-                <p>Things I enjoy doing in my free time.</p>
-                <ul id="activityList"></ul>
-            </section>
-
-        </main>
+        <a href="#activities" class="nav-button">Explore Profile ↗</a>
     </header>
 
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero section" id="home">
+
+            <div class="hero-content">
+
+                <div class="availability">
+                    <span class="status-dot"></span>
+                    Student & Aspiring Developer
+                </div>
+
+                <p class="eyebrow">WELCOME TO MY DIGITAL SPACE</p>
+
+                <h1>
+                    Hello, I'm <span>Steve Perceval.</span>
+                    <br>
+                    I build things for the web.
+                </h1>
+
+                <p class="hero-description">
+                    A passionate student, creative thinker and aspiring
+                    software developer. I enjoy turning ideas into
+                    beautiful digital experiences through code.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="primary-button">
+                        Discover More <span>↗</span>
+                    </a>
+
+                    <button id="greetBtn" class="secondary-button">
+                        Say Hello 👋
+                    </button>
+                </div>
+
+                <div id="greeting" class="greeting"></div>
+
+                <div class="hero-stats">
+                    <div>
+                        <h3>15</h3>
+                        <p>Years Old</p>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <h3>JS</h3>
+                        <p>Favorite Language</p>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <h3>01+</h3>
+                        <p>Learning Every Day</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="image-frame">
+
+                    <div class="image-top-label">
+                        <span class="status-dot"></span>
+                        MY PROFILE
+                    </div>
+
+                    <img
+                        src="https://lh3.googleusercontent.com/a/ACg8ocIFtXHD3aj_LC3PuSBCxgFTTTj8DMQA1scv6yWd8Gygx_-oYBY=s83-c-mo"
+                        alt="Portrait of Steve Perceval"
+                    >
+
+                    <div class="image-caption">
+                        <div>
+                            <h3>Steve Perceval</h3>
+                            <p>Future Software Developer</p>
+                        </div>
+                        <span class="verified-icon">SP</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-card code-card">
+                    <span class="code-icon">⌘</span>
+                    <div>
+                        <strong>Creative Coding</strong>
+                        <p>Building the future</p>
+                    </div>
+                </div>
+
+                <div class="floating-card language-card">
+                    <span>JS</span>
+                    <strong>JavaScript</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+
+        <section class="about section" id="about">
+
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>A little more <span>about me.</span></h2>
+                <p>Every great journey starts with curiosity.</p>
+            </div>
+
+            <div class="about-grid">
+
+                <article class="info-card">
+                    <div class="card-icon">🎂</div>
+                    <p class="card-label">PERSONAL DETAILS</p>
+                    <h3>15 Years</h3>
+                    <p>Young, ambitious and always ready to learn.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="card-icon">💻</div>
+                    <p class="card-label">PROGRAMMING</p>
+                    <h3>JavaScript</h3>
+                    <p>My favorite programming language.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <p class="card-label">MY HOBBY</p>
+                    <h3>Coding</h3>
+                    <p>Creating websites and exploring technology.</p>
+                </article>
+
+            </div>
+
+            <div class="more-section">
+
+                <div class="more-content">
+                    <p class="eyebrow">MY JOURNEY</p>
+                    <h3>Driven by curiosity.<br>Powered by creativity.</h3>
+
+                    <p>
+                        I enjoy building websites, solving programming
+                        challenges, discovering new ideas and improving
+                        my technical skills. My dream is to become a
+                        professional software developer and create
+                        technology that makes a difference.
+                    </p>
+
+                    <div id="moreInfo" class="more-info">
+                        <p>
+                            My learning journey includes HTML, CSS and
+                            JavaScript. I also enjoy experimenting with
+                            different website designs and developing
+                            practical projects.
+                        </p>
+                    </div>
+
+                    <button id="moreBtn" class="primary-button">
+                        Show More About Me ↗
+                    </button>
+                </div>
+
+                <div class="journey-visual">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                    <div class="journey-center">
+                        <span>SP</span>
+                        <p>MY JOURNEY</p>
+                    </div>
+
+                    <div class="orbit-label label-html">HTML</div>
+                    <div class="orbit-label label-css">CSS</div>
+                    <div class="orbit-label label-js">JS</div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACTIVITIES SECTION -->
+
+        <section class="activities section" id="activities">
+
+            <div class="section-heading">
+                <p class="eyebrow">OUTSIDE THE CODE</p>
+                <h2>Things I <span>love doing.</span></h2>
+                <p>My favorite activities and interests.</p>
+            </div>
+
+            <div class="activity-grid" id="activityList"></div>
+
+        </section>
+
+        <!-- INTERACTIVE CONTROLS -->
+
+        <section class="customization section">
+
+            <div class="custom-box">
+                <div>
+                    <p class="eyebrow">MAKE IT YOURS</p>
+                    <h2>Explore the experience.</h2>
+                    <p>Try changing the appearance of my profile.</p>
+                </div>
+
+                <div class="custom-buttons">
+                    <button id="backgroundBtn" class="secondary-button">
+                        ◐ Change Background
+                    </button>
+
+                    <button id="textColorBtn" class="secondary-button">
+                        ✦ Change Text Colour
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
     <footer>
-        <p>© 2026 My Profile | Designed with HTML, CSS & JavaScript</p>
+        <a href="#" class="logo">SP<span>.</span></a>
+
+        <p>Designed & built with passion by Steve Perceval.</p>
+
+        <p class="copyright">
+            © 2026 Steve Perceval. All rights reserved.
+        </p>
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
